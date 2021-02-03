@@ -1,0 +1,36 @@
+{
+  "name": "BlueStack-Backend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.596.0",
+    "axios": "^0.19.2",
+    "bcryptjs": "^2.4.3",
+    "chalk": "^2.4.2",
+    "cookie-parser": "~1.4.3",
+    "cors": "^2.8.5",
+    "crypto-js": "^4.0.0",
+    "crypto-random-string": "^3.0.1",
+    "debug": "~2.6.9",
+    "dotenv": "^8.1.0",
+    "express": "~4.16.0",
+    "express-validator": "^6.3.0",
+    "fs": "0.0.1-security",
+    "handlebars": "^4.7.6",
+    "handlebars-helpers": "^0.10.0",
+    "http-errors": "~1.6.2",
+    "jade": "~1.11.0",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.15",
+    "mailgun-js": "^0.22.0",
+    "moment-timezone": "^0.5.27",
+    "mongoose": "^5.6.12",
+    "morgan": "~1.9.0",
+    "node-schedule": "^1.3.2",
+    "underscore": "^1.10.2",
+    "uuid": "^3.3.3"
+  }
+}
