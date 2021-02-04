@@ -93,10 +93,11 @@ module.exports.fetchRoom = async (req, res, next) => {
 /* Remove any room */
 module.exports.removeRoom = async (req, res, next) => {
   try {
-    const deletedRoom = await Rooms.deleteOne({ _id: req.params.id });
+    const deletedRoom = await Rooms.findByIdAndDelete(req.params.id);
     res.status(200).json({
       success: true,
-      message: "Successfully deleted!",
+      roomId: deletedRoom._id,
+      message: "Room Successfully deleted!",
     });
   } catch (err) {
     console.log(err);

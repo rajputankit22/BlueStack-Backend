@@ -21,7 +21,7 @@ module.exports.signIn = async (req, res, next) => {
     let updatedEmployee = await Employees.findByIdAndUpdate(findEmployee._id, { refreshToken: newRefreshToken }, { new: true })
     res.status(200).json({
       success: true,
-      admin: updatedEmployee.getPublicProfile(),
+      employee: updatedEmployee.getPublicProfile(),
       token: token,
       refreshToken: newRefreshToken
     });
@@ -54,7 +54,6 @@ module.exports.signOut = async (req, res, next) => {
     if (!updatedEmployee.refreshToken) {
       res.status(200).json({
         success: true,
-        token: updatedEmployee,
         message: "Successfully signOut!"
       });
     } else {

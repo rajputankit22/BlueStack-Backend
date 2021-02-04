@@ -32,5 +32,9 @@
     "node-schedule": "^1.3.2",
     "underscore": "^1.10.2",
     "uuid": "^3.3.3"
+  },
+  "author": {
+    "name": "Ankit Kumar Rajpoot",
+    "email": "rajputankit22@gmail.com"
   }
 }

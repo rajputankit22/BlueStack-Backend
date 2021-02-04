@@ -25,7 +25,7 @@ module.exports.addEmployee = async (req, res, next) => {
     res.status(200).send({
       success: true,
       message: "Successfully added employee!",
-      admin: savedEmployee.getPublicProfile(),
+      employee: savedEmployee.getPublicProfile(),
     });
   } catch (err) {
     console.log(err);
@@ -63,7 +63,7 @@ module.exports.updateProfile = async (req, res, next) => {
     const saveAdmin = await findEmployee.save();
     res.status(200).json({
       success: true,
-      admin: saveAdmin.getPublicProfile()
+      employee: saveAdmin.getPublicProfile()
     });
   } catch (err) {
     console.log(err);
@@ -122,10 +122,11 @@ module.exports.removeEmployee = async (req, res, next) => {
         error: "You can't delete yourself!",
       });
     } else {
-      const deletedEmployee = await Employees.deleteOne({ _id: req.params.id });
-      res.status(200).json({
+      const deletedEmployee = await Employees.findByIdAndDelete(req.params.id)
+      res.status(200).send({
         success: true,
-        message: "Successfully deleted!",
+        employeeId: deletedEmployee._id,
+        message: "Employee Successfully deleted!"
       });
     }
   } catch (err) {
